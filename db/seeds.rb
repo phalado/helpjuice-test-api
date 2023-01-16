@@ -76,3 +76,5 @@
   "Your Medium username might not be searchable!",
   "How to see niche stories within a publication ('hack')",
 ].each { |name| Article.create(name: name) }
+
+Article.reindex
