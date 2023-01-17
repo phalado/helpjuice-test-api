@@ -11,7 +11,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
 
       before(:each) do
         Article.reindex
-        get api_v1_articles_index_path
+        get api_v1_articles_path
       end
   
       it { expect(response).to have_http_status(:success) }
@@ -26,7 +26,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
 
       before(:each) do
         Article.reindex
-        get api_v1_articles_index_path, params: { name: 'be a mimic' }
+        get api_v1_articles_path, params: { name: 'be a mimic' }
       end
 
       it { expect(response).to have_http_status(:success) }
@@ -49,7 +49,7 @@ RSpec.describe "Api::V1::Articles", type: :request do
 
       before(:each) do
         Article.reindex
-        get api_v1_articles_index_path, params: { name: 'easy trick' }
+        get api_v1_articles_path, params: { name: 'easy trick' }
       end
 
       it { expect(response).to have_http_status(:success) }

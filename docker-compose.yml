@@ -13,9 +13,9 @@ services:
       PG_PASSWORD: postgres
       ELASTICSEARCH_URL: http://elasticsearch:9200/
     ports:
-      - "3000:3000"
+      - "3100:3100"
     expose:
-      - "3000"
+      - "3100"
 
   elasticsearch:
     container_name: helpjuice-test-el
