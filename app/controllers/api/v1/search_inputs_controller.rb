@@ -8,11 +8,11 @@ class Api::V1::SearchInputsController < ApplicationController
 
   def update
     @search_input.update(input: params[:input])
-    render json: { search_input: { id: search_input.id, input: search_input.input } }, status: :ok
+    render json: { search_input: { id: @search_input.id, input: @search_input.input } }, status: :ok
   end
 
   def index
-    results = SearchInput.fetch
+    results = SearchInput.fetch_input_count
     render json: { search_inputs: results }, status: :ok
   end
 

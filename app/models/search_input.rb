@@ -3,8 +3,8 @@ class SearchInput < ApplicationRecord
 
   searchkick
 
-  def self.fetch
-    SearchInput.search("*", aggs: {column_name: {terms: {field: "input", order: {_count: :desc}}}})
+  def self.fetch_input_count
+    SearchInput.search('*', body_options: { aggs: { input: { terms: { field: "input" } } } })
                .aggs["input"]["buckets"]
   end
 end
