@@ -78,3 +78,4 @@
 ].each { |name| Article.create(name: name) }
 
 Article.reindex
+SearchInput.reindex
